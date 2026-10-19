@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f5ef" />
+  <meta name="description" content="RahiVerse — Play. Discover. Challenge. Repeat. Explore Samia's Closet." />
+  <meta property="og:title" content="RahiVerse | SAMIA'S CLOSET" />
+  <meta property="og:description" content="খেলো, নতুন কিছু জানো, বন্ধুদের চ্যালেঞ্জ দাও!" />
+  <title>RahiVerse × SAMIA'S CLOSET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">RahiVerse <span>•</span> Play. Discover. Challenge. Repeat.</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="RahiVerse home"><span class="brand-mark">R</span><span><b>RahiVerse</b><small>with SAMIA’S CLOSET</small></span></a>
+    <nav id="desktop-nav"><a href="#home" data-i18n="navHome">হোম</a><a href="#play" data-i18n="navPlay">খেলুন</a><a href="#daily" data-i18n="navDaily">আজকের চ্যালেঞ্জ</a><a href="#style" data-i18n="navStyle">Style Studio</a><a href="#shop">SAMIA’S CLOSET</a></nav>
+    <div class="header-actions"><button id="languageBtn" class="language-btn" aria-label="Change language">EN</button><button id="cartBtn" class="cart-btn">Bag <span id="cartCount">0</span></button><button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button></div>
+  </header>
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i><span data-i18n="heroEyebrow">খেলা, কৌতূহল আর নিজের স্টাইল</span></span>
+        <h1 data-i18n="heroTitle">আজ নিজেকে<br><em>কতটা চেনো?</em></h1>
+        <p data-i18n="heroDesc">খেলো, নতুন কিছু জানো, বন্ধুদের চ্যালেঞ্জ দাও!</p>
+        <div class="hero-actions"><a class="btn btn-dark" href="#play" data-i18n="startChallenge">Start Your Challenge <span>↗</span></a><a class="btn btn-light" href="#style" data-i18n="exploreStyle">Explore Your Style</a></div>
+        <div class="hero-note"><span class="note-dot"></span> No sign-up needed to play</div>
+      </div>
+      <div class="hero-art" aria-label="Abstract cream textile and teal editorial shapes">
+        <div class="fabric fabric-one"></div><div class="fabric fabric-two"></div><div class="art-ring"></div>
+        <div class="hero-label"><small>DISCOVER YOUR WORLD</small><b>Play a little.<br>Find a lot.</b><span>RAHIVERSE / 01</span></div>
+        <div class="sparkle">✳</div>
+      </div>
+    </section>
+
+    <section class="section play-section" id="play">
+      <div class="section-heading"><div><span class="eyebrow">BRAIN ZONE / 01</span><h2 data-i18n="playTitle">মাথা খাটাও, মজা বাড়াও</h2><p data-i18n="playDesc">ছোট্ট কুইজ, নতুন জ্ঞান—একবার খেলেই দেখো।</p></div><span class="section-index">01 — PLAY</span></div>
+      <div class="game-layout">
+        <article class="game-card featured-game"><div class="game-top"><span class="pill">DAILY PICK</span><span class="game-symbol">✳</span></div><h3 data-i18n="brainTitle">Brain Sprint</h3><p data-i18n="brainDesc">বিজ্ঞান, যুক্তি আর সাধারণ জ্ঞানের ৫টি প্রশ্ন।</p><div class="game-meta"><span>5 Questions</span><span>•</span><span>~2 min</span></div><button class="btn btn-dark" id="startQuiz" data-i18n="playNow">এখনই খেলো ↗</button></article>
+        <article class="game-card personality-card"><div class="game-top"><span class="pill pill-pink">JUST FOR FUN</span><span class="game-symbol">◉</span></div><h3 data-i18n="personalityTitle">তুমি কোন টাইপ?</h3><p data-i18n="personalityDesc">তোমার fun personality vibe আবিষ্কার করো।</p><div class="game-meta"><span>4 Questions</span><span>•</span><span>~1 min</span></div><button class="btn btn-outline" id="startPersonality" data-i18n="discover">আবিষ্কার করো ↗</button></article>
+      </div>
+      <div class="quiz-panel hidden" id="quizPanel" aria-live="polite"><div class="quiz-head"><span id="quizCategory">BRAIN SPRINT</span><span id="quizProgress">1 / 5</span></div><div class="progress"><span id="progressBar"></span></div><h3 id="questionText"></h3><div id="answerList" class="answer-list"></div><p id="answerFeedback" class="feedback"></p><div class="quiz-controls"><button id="nextQuestion" class="btn btn-dark" disabled>পরের প্রশ্ন →</button><button id="closeQuiz" class="text-button">বন্ধ করুন</button></div></div>
+      <div class="result-panel hidden" id="resultPanel" aria-live="polite"><span class="eyebrow">YOUR RESULT</span><h3 id="resultTitle">দারুণ খেলেছ!</h3><p id="resultDesc"></p><div class="score-line"><strong id="resultScore">0/5</strong><span>তোমার স্কোর</span></div><div class="result-actions"><button id="shareResult" class="btn btn-dark">বন্ধুকে শেয়ার করো ↗</button><button id="replayQuiz" class="btn btn-light">আবার খেলো</button><button id="closeResult" class="text-button">বন্ধ</button></div></div>
+    </section>
+
+    <section class="daily-band section" id="daily"><div class="daily-icon">✦</div><div class="daily-copy"><span class="eyebrow">DAILY CHALLENGE</span><h2 data-i18n="dailyTitle">প্রতিদিন নতুন একটা চ্যালেঞ্জ</h2><p data-i18n="dailyDesc">আজকের প্রশ্নটি সমাধান করো, কাল আবার নতুন প্রশ্ন অপেক্ষা করবে।</p></div><div class="daily-action"><span id="dailyStatus">আজকের চ্যালেঞ্জ বাকি</span><button class="btn btn-dark" id="dailyBtn">চ্যালেঞ্জ নাও ↗</button></div></section>
+
+    <section class="section style-section" id="style"><div class="section-heading"><div><span class="eyebrow">STYLE STUDIO / 02</span><h2 data-i18n="styleTitle">তোমার vibe, তোমার style</h2><p data-i18n="styleDesc">বাজেট আর পছন্দ বেছে নাও—স্টকে থাকা পণ্য থেকে সাজেশন দেখো।</p></div><span class="section-index">02 — DISCOVER</span></div>
+      <div class="style-filters"><label>Style<select id="styleFilter"><option value="all">সব স্টাইল</option><option value="Casual">Casual</option><option value="Streetwear">Streetwear</option><option value="Classic">Classic</option><option value="Minimal">Minimal</option></select></label><label>সর্বোচ্চ বাজেট<select id="budgetFilter"><option value="all">যেকোনো বাজেট</option><option value="300">৳300</option><option value="500">৳500</option><option value="1000">৳1,000</option><option value="2000">৳2,000</option></select></label><label>Category<select id="categoryFilter"><option value="all">সব</option><option value="Men">Boys & Men</option><option value="Women">Women</option></select></label><button id="applyStyle" class="btn btn-dark">স্টাইল খুঁজুন ↗</button></div><p class="small-note">সাজেশনগুলো নিচের পণ্য তালিকা থেকে তৈরি হয়। Admin থেকে আসল পণ্য যোগ করলে এখানে দেখা যাবে।</p>
+    </section>
+
+    <section class="section shop-section" id="shop"><div class="section-heading"><div><span class="eyebrow">SAMIA’S CLOSET / 03</span><h2 data-i18n="shopTitle">Shop the collection</h2><p data-i18n="shopDesc">Everyday pieces, chosen with care.</p></div><span class="section-index">03 — SHOP</span></div>
+      <div class="shop-toolbar"><div class="category-tabs"><button class="tab active" data-category="all">Featured</button><button class="tab" data-category="Women">Women</button><button class="tab" data-category="Men">Boys & Men</button></div><input id="productSearch" type="search" placeholder="পণ্য খুঁজুন..." aria-label="Search products"></div>
+      <div id="productGrid" class="product-grid"></div><p id="noProducts" class="empty-state hidden">এই ফিল্টারে কোনো পণ্য পাওয়া যায়নি। Admin থেকে পণ্য যোগ করুন অথবা ফিল্টার পরিবর্তন করুন।</p>
+    </section>
+
+    <section class="rewards-section section" id="rewards"><div class="rewards-main"><span class="eyebrow">THE LITTLE EXTRAS</span><h2 data-i18n="rewardsTitle">Every purchase brings you closer to something special.</h2><p>তোমার voucher ও reward এক জায়গায় রাখো। যোগ্যতা এবং ব্যালেন্স কেবল বাস্তব account data যুক্ত হলে দেখানো হবে।</p><div class="rewards-actions"><button class="btn btn-dark" id="rewardInfoBtn">Rewards কীভাবে কাজ করে?</button><a href="#shop" class="btn btn-light">Shop collection ↗</a></div></div><div class="reward-ticket"><span class="ticket-top">SAMIA’S CLOSET</span><div class="ticket-star">✳</div><small>YOUR REWARD SPACE</small><h3>Little joys.<br>Lovely surprises.</h3><div class="ticket-bottom"><span>VOUCHER WALLET</span><span>••• •••</span></div></div><div id="rewardInfo" class="info-strip hidden">Reward balance, voucher expiry ও history ব্যক্তিগত account/backend data সংযুক্ত হলে নির্ভুলভাবে দেখানো যাবে। এই starter version কোনো কাল্পনিক balance দেখায় না।</div></section>
+
+    <section class="weekly-section section"><div class="weekly-badge">WEEKLY<br>PRIVILEGE</div><div><span class="eyebrow">A LITTLE SOMETHING, WEEKLY</span><h2 data-i18n="weeklyTitle">Something special, every week.</h2><p>সাপ্তাহিক রিওয়ার্ড চালু থাকলে এখানে claim status দেখাবে। কোনো ভুয়া countdown বা পুরস্কারের প্রতিশ্রুতি নেই।</p></div><div class="weekly-status"><span class="status-dot"></span><b id="weeklyStatus">স্ট্যাটাস যাচাই প্রয়োজন</b><small>Admin/backend সংযোগের অপেক্ষায়</small></div></section>
+
+    <section class="story-section section" id="story"><div class="story-number">SC.</div><div><span class="eyebrow">OUR APPROACH</span><h2 data-i18n="storyTitle">Style should feel like you.</h2><p>SAMIA’S CLOSET-এ নারী ও পুরুষ—দুজনের জন্য পোশাকের সংগ্রহ। RahiVerse-এ খেলা, শেখা ও নিজের পছন্দ আবিষ্কারের জায়গা।</p><span class="owner-line">Owner: Md. Humaun Husen Rahi</span></div><div class="story-side"><span>THOUGHTFULLY CURATED</span><div class="story-lines"></div><span>MADE FOR EVERYDAY YOU</span></div></section>
+  </main>
+  <footer class="footer" id="contact"><div class="footer-top"><a class="brand footer-brand" href="#home"><span class="brand-mark">R</span><span><b>RahiVerse</b><small>with SAMIA’S CLOSET</small></span></a><p>Play. Discover. Challenge. Repeat.</p><a class="btn btn-light" id="contactWhatsApp" href="#" target="_blank" rel="noopener">Direct Contact with Rahi ↗</a></div><div class="footer-bottom"><span>© <span id="year"></span> RahiVerse × SAMIA’S CLOSET</span><span>Owner: Md. Humaun Husen Rahi</span><div><a href="#privacy" id="privacyLink">Privacy</a><a href="#terms" id="termsLink">Terms</a><button id="adminOpen" class="footer-admin">Admin access</button></div></div><p class="footer-disclaimer">Starter template: products, orders, vouchers and admin permissions must be connected to a verified backend before production use.</p></footer>
+
+  <div class="overlay hidden" id="cartOverlay"><aside class="drawer"><div class="drawer-head"><h2>Your bag</h2><button class="icon-button" id="closeCart" aria-label="Close">×</button></div><div id="cartItems"></div><div class="drawer-total"><span>Total</span><strong id="cartTotal">৳0</strong></div><p class="small-note">এটি order request প্রস্তুত করে; payment received বা order confirmed বোঝায় না।</p><button class="btn btn-dark full" id="whatsappOrder">WhatsApp order request ↗</button><button class="text-button full" id="clearCart">ব্যাগ খালি করুন</button></aside></div>
+  <div class="overlay hidden" id="adminOverlay"><aside class="drawer admin-drawer"><div class="drawer-head"><h2>Admin preview</h2><button class="icon-button" id="closeAdmin">×</button></div><div class="notice">এই ZIP-এর Admin preview নিরাপদ production admin নয়। শুধু এই ব্রাউজারের local demo data পরিচালনা করে। Public deployment-এর আগে server-side authentication ও database rules লাগবে।</div><label class="admin-label">Admin passphrase (demo only)<input id="adminPassword" type="password" placeholder="Demo: local-only"></label><button id="adminLogin" class="btn btn-dark full">Open local demo tools</button><div id="adminTools" class="hidden"><h3>পণ্য যোগ করুন</h3><label class="admin-label">পণ্যের নাম<input id="newName" placeholder="Product name"></label><div class="admin-two"><label class="admin-label">দাম (৳)<input id="newPrice" type="number" min="1" placeholder="500"></label><label class="admin-label">Category<select id="newCategory"><option value="Men">Boys & Men</option><option value="Women">Women</option></select></label></div><label class="admin-label">Image URL<input id="newImage" placeholder="https://..."></label><button id="addProduct" class="btn btn-dark full">Add to this browser</button><p class="small-note">ডেমো passphrase কোনো নিরাপত্তা দেয় না; localStorage পণ্যগুলো শুধু একই browser-এ থাকবে।</p></div></aside></div>
+  <div class="toast hidden" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

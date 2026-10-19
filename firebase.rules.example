@@ -1,0 +1,23 @@
+// EXAMPLE ONLY — review and adapt before using.
+// Do not deploy this as-is without matching your authentication and data model.
+// Default-deny is safer than broad public read/write rules.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public catalog reads may be enabled for published products only.
+    match /products/{productId} {
+      allow read: if resource.data.published == true;
+      allow write: if false; // replace with a verified server-side admin role check
+    }
+    // Private customer orders: never allow public reads.
+    match /orders/{orderId} {
+      allow read, write: if false; // implement authenticated owner/customer access
+    }
+    match /users/{userId} {
+      allow read, write: if false; // implement least-privilege owner access
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
